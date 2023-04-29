@@ -1,0 +1,19 @@
+#Pause{
+-fx-background-color:#ff0000;
+-fx-text-fill: white;
+}
+
+#MyFile{
+-fx-border-color: #ff0000;
+-fx-border-width: 3px;
+-fx-border-radius: 2px;
+}
+
+#Timer{
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0.0, 0, 1);
+}
+
+#close: hover{
+-fx-background-color: red;
+-fx-text-fill: white;
+}

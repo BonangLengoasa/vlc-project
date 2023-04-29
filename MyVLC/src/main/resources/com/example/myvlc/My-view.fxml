@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myvlc.HelloController">
+   <center>
+      <StackPane fx:id="stack" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mview" fitHeight="270.0" fitWidth="600.0" />
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="460.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="MyFile" alignment="CENTER" mnemonicParsing="false" onAction="#TopFile" text="Choose File">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Button fx:id="close" alignment="CENTER" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#closeAction" text="Close">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <VBox prefHeight="83.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="Timer" blockIncrement="5.0" max="150.0" prefHeight="24.0" prefWidth="516.0">
+               <VBox.margin>
+                  <Insets left="40.0" right="25.0" />
+               </VBox.margin>
+               <effect>
+                  <Glow />
+               </effect>
+            </Slider>
+            <AnchorPane prefHeight="63.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="39.0" layoutY="-1.0" prefHeight="51.0" prefWidth="540.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="-1.0">
+                     <children>
+                        <Button fx:id="Backward" layoutX="48.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionSlowBackward" prefHeight="41.0" prefWidth="51.0" text="&lt;&lt;&lt;">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="Play" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="42.0" prefWidth="62.0" text="PLAY" textOverrun="CLIP">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                           <graphic>
+
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Pause" layoutX="165.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionPause" prefHeight="41.0" prefWidth="51.0" text="| |" textOverrun="CLIP">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <graphic>
+
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Stop" layoutX="261.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionStop" prefHeight="41.0" prefWidth="62.0" text="STOP" textFill="RED">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <graphic>
+
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Forward" layoutX="256.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionFastForward" prefHeight="41.0" prefWidth="51.0" text="&gt;&gt;&gt;">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Slider fx:id="Volume" blockIncrement="5.0" onDragDetected="#ActionVolume" prefHeight="14.0" prefWidth="112.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                           <HBox.margin>
+                              <Insets left="20.0" top="11.0" />
+                           </HBox.margin>
+                           <effect>                             <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="MOVE" />
+                           </cursor>
+                        </Slider>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
